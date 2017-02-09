@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Test to speech</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="app.js"></script>
+    <script src="node_modules/watson-developer-cloud/tone-analyzer/v3.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+    background: deepskyblue; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+    background: -moz-linear-gradient(right, #76b852, #8DC26F);
+    background: -o-linear-gradient(right, #76b852, #8DC26F);
+    background: linear-gradient(to left, #76b852, #8DC26F);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    }
+    </style>
+
+</head>
+
+<body >
+
+<div style="width:800px; margin:0 auto;">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h4 style="color: white"><B>Interactive voice Activated System </B></h4>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <document>
+
+            <table class="table table-bordered" style="align-content: center" class="table table-bordered table-condensed">
+                <tr>
+                    <td align="center"><textarea type="text"  id="text" name="text" rows="4" cols="80" placeholder="Search anything"></textarea>
+                    </td>
+                    <td align="center"><button class="btn btn-info" onclick="speech()">Search!</button>
+                    </td>
+                </tr>
+                <audio src="" class="speech" hidden></audio>
+            </table>
+
+        </document>
+    </div>
+    </br> </br>
+
+
+    <div >
+        <table id="display" class="table table-striped" style="align-content: center" class="table table-bordered table-condensed">
+            <!--dynamic rows will be appended here-->
+        </table>
+
+    </div>
+
+</div>
+<!--<div>
+    <input type="button" value="alchemy" onclick="alchemy()">
+
+</div> -->
+</body>
+
+</html>

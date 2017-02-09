@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+    <link rel="stylesheet" type="text/css" href="login%20page.css">
+    <meta name="google-signin-client_id" content="906826577883-7ugpr6ofduvou1mgjnh5neh2jr56tahm.apps.googleusercontent.com">
+    <script src="app1.js"></script>
+</head>
+<body>
+<h1> Lab Assignment 3</h1>
+<div class="login-page">
+    <div class="form">
+        <form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+
+        <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button>
+            <button  id="gSignIn">signin</button>
+            <button onclick="signOut()">signout from google </button>
+
+
+        </form>
+    </div>
+</div>
+
+<script>
+
+function onSuccess(googleUser) {
+
+var profile = googleUser.getBasicProfile();
+
+gapi.client.load('plus', 'v1', function () {
+var request = gapi.client.plus.people.get({
+'userId': 'me',
+
+});
+//Display the user details
+request.execute(function (resp) {
+
+var profileHTML = '<div class="profile"><div class="head">Welcome '+resp.name.givenName+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></div>';
+    profileHTML += '<img src="'+resp.image.url+'"/><div class="proDetails"><p>'+resp.displayName+'</p><p>'+resp.emails[0].value+'</p><p>'+resp.gender+'</p><p>'+resp.id+'</p><p><a href="'+resp.url+'">View Google+ Profile</a></p></div></div>';
+$('.userContent').html(profileHTML);
+$('#gSignIn').slideUp('slow');
+
+});
+});
+}
+function onFailure(error) {
+alert(error);
+}
+function renderButton() {
+
+gapi.signin2.render('gSignIn', {
+'scope': 'profile email',
+'width': 240,
+'height': 50,
+'longtitle': true,
+'theme': 'dark',
+'onsuccess': onSuccess,
+'onfailure': onFailure
+
+});
+
+}
+function signOut() {
+var auth2 = gapi.auth2.getAuthInstance();
+auth2.signOut().then(function () {
+$('.userContent').html('');
+$('#gSignIn').slideDown('slow');
+});
+
+}
+
+</script>
+<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+
+</body>
+</html>
