@@ -8,3 +8,5 @@ Lab 2:https://github.com/swaroop832/ASE/wiki/lab-2
 Lab 3:https://github.com/swaroop832/ASE/wiki/Lab-3
 
 Lab 4:https://github.com/swaroop832/ASE/wiki/Lab-4
+
+Lab 5:https://github.com/swaroop832/ASE/wiki/Lab-5
