@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".WearActivity" tools:deviceIds="wear_round">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:textColor="@color/dark_blue"
+        android:layout_marginTop="59dp"
+        android:shadowColor="@color/blue"
+        android:textColorHighlight="@color/blue"
+        android:id="@+id/txt_Email"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:background="@drawable/image1"
+        android:onClick="translateText"
+        android:id="@+id/btn_Search"
+        android:layout_marginEnd="18dp"
+        android:layout_below="@+id/txt_Email"
+        android:layout_alignParentEnd="true"
+        android:layout_width="50dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Result"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/btn_Search"
+        android:layout_alignStart="@+id/txt_Email" />
+
+</RelativeLayout>
