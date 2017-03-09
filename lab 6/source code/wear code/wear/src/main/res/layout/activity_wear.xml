@@ -6,5 +6,5 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     app:rectLayout="@layout/rect_activity_wear" app:roundLayout="@layout/round_activity_wear"
     tools:context=".WearActivity"
-    android:background="@drawable/image"
+    android:background="@drawable/image2"
     tools:deviceIds="wear"></android.support.wearable.view.WatchViewStub>
